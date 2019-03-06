@@ -148,5 +148,4 @@ while z > 0:
 	gameO()
 	tictactoe()
 
-input('Press Enter to continue ')
 sys.exit(0)
