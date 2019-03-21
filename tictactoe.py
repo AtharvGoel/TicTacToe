@@ -1,153 +1,268 @@
 import random
 import sys
 
-#list = ['0,0', '0,1', '0,2', '1,0','1,1','1,2','2,0','2,1','2,2']
-a = '0,0'
-b = '0,1'
-c = '0,2'
-d = '1,0'
-e = '1,1'
-f = '1,2'
-g = '2,0'
-h = '2,1'
-i = '2,2'
+class Code:
+	def tictactoe(self):
+		print('\n   ' + list[0] + ' || ' + list[1] + ' || ' + list[2])
+		print('   ======================')
+		print('   ' + list[3] + ' || ' + list[4] + ' || ' + list[5])
+		print('   ======================')
+		print('   ' + list[6] + ' || ' + list[7] + " || " + list[8] + '\n')
 
-def tictactoe():
-	print('\n   ' + a + ' || ' + b + ' || ' + c)
-	print('   ======================')
-	print('   ' + d + ' || ' + e + ' || ' + f)
-	print('   ======================')
-	print('   ' + g + ' || ' + h + " || " + i + '\n')
+		
+	def playermove(self):
+		pinput = input('Enter your move: ')
+		
+		if pinput == list[0]:
+			list[0] = 'X '
+		elif pinput == list[1]:
+			list[1] = 'X '
+		elif pinput == list[2]:
+			list[2] = 'X '
+		elif pinput == list[3]:
+			list[3] = 'X '
+		elif pinput == list[4]:
+			list[4] = 'X '
+		elif pinput == list[5]:
+			list[5] = 'X '
+		elif pinput == list[6]:
+			list[6] = 'X '
+		elif pinput == list[7]:
+			list[7] = 'X '
+		elif pinput == list[8]:
+			list[8] = 'X '
+		else:
+			print('Please enter a valid move')
+			y.playermove()
+			
+		y.tictactoe()
+		
+	def compmove(self):
+		global player, list, c, p, move
+		pinput = ' '
 
-user1 = input('\nEnter Player\'s name: ')
-user2 = input('Enter Player\'s name: ')
+		for i in list:
+			x = list.index(i)
+			
+			# Check for winning move
+			if c == 'Computer Wins!':
+				pinput = list[x]
+			# block opponent's winning move
+			elif p == 'You Win!':
+				pinput = list[x]
+			# play centre
+			elif list[4] == '1,1':
+				pinput = list[4]
+			# play corner
+			elif list[0] == '0,0' or list[2] == '0,2' or list[6] == '2,0' or list[8] == '2,2':  ### Check this statement
+				if list[0] == '0,0':
+					pinput = list[0]
+				elif list[2] == '0,2':
+					pinput = list[2]
+				elif list[6] == '2,0':
+					pinput = list[6]
+				else:
+					pinput = list[8]
+			# Any random move
+			else:
+				pinput = list[random.choice([1,3,5,7])]
+#				if list[1] == '0,1':
+#					pinput = '0,1'
+#				elif list[3] == '1,0':
+#					pinput = '1,0'
+#				elif list[5] == '1,2':
+#					pinput = '1,2'
+#				elif list[7] == '2,1':
+#					pinput = '2,1'
+#				else:
+#					y.compmove()
+			
+		if pinput == 'X ':
+			pinput = ' '
+			y.compmove()
+		elif pinput == 'O ':
+			pinput = ' '
+			y.compmove()
+		else:
+			pass
+		
+		if pinput == list[0]:
+			move = list[0]
+			list[0] = 'O '
+		elif pinput == list[1]:
+			move = list[1]
+			list[1] = 'O '
+		elif pinput == list[2]:
+			move = list[2]
+			list[2] = 'O '
+		elif pinput == list[3]:
+			move = list[3]
+			list[3] = 'O '
+		elif pinput == list[4]:
+			move = list[4]
+			list[4] = 'O '
+		elif pinput == list[5]:
+			move = list[5]
+			list[5] = 'O '
+		elif pinput == list[6]:
+			move = list[6]
+			list[6] = 'O '
+		elif pinput == list[7]:
+			move = list[7]
+			list[7] = 'O '
+		elif pinput == list[8]:
+			move = list[8]
+			list[8] = 'O '
+		else:
+			y.compmove()
+			
+		if pinput == 'X ':
+			pinput = ' '
+			y.compmove()
+		elif pinput == 'O ':
+			pinput = ' '
+			y.compmove
+		else:
+			pass
+			
+	def checkp(player):
+		global list, x
+		if list[0]==list[1] and list[1]==list[2]:
+			p = 'You Win!'
+			print('You Win!')
+			y.tictactoe()
+			sys.exit(0)
+			
+		elif list[3]==list[4] and list[4]==list[5]:
+			p = 'You Win!'
+			print('You Win!')
+			y.tictactoe()
+			sys.exit(0)
+			
+		elif list[6]==list[7] and list[7]==list[8]:
+			p = 'You Win!'
+			print('You Win!')
+			y.tictactoe()
+			sys.exit(0)
+			
+		elif list[0]==list[3] and list[3]==list[6]:
+			p = 'You Win!'
+			print('You Win!')
+			y.tictactoe()
+			sys.exit(0)
+			
+		elif list[1]==list[4] and list[4]==list[7]:
+			p = 'You Win!'
+			print('You Win!')
+			y.tictactoe()
+			sys.exit(0)
+			
+		elif list[2]==list[5] and list[5]==list[8]:
+			p = 'You Win!'
+			print('You Win!')
+			y.tictactoe()
+			sys.exit(0)
+			
+		elif list[0]==list[4] and list[4]==list[8]:
+			p = 'You Win!'
+			print('You Win!')
+			y.tictactoe()
+			sys.exit(0)
+			
+		elif list[2]==list[4] and list[4]==list[6]:
+			p = 'You Win!'
+			print('You Win!')
+			y.tictactoe()
+			sys.exit(0)
+			
+		else:
+			pass
+			
+	def checkc(self):
+		if list[0]==list[1] and list[1]==list[2]:
+			c = 'Computer Wins!'
+			print('Computer Wins!')
+			y.tictactoe()
+			sys.exit(0)
+			
+		elif list[3]==list[4] and list[4]==list[5]:
+			c = 'Computer Wins!'
+			print('Computer Wins!')
+			y.tictactoe()
+			sys.exit(0)
+			
+		elif list[6]==list[7] and list[7]==list[8]:
+			c = 'Computer Wins!'
+			print('Computer Wins!')
+			y.tictactoe()
+			sys.exit(0)
+			
+		elif list[0]==list[3] and list[3]==list[6]:
+			c = 'Computer Wins!'
+			print('Computer Wins!')
+			y.tictactoe()
+			sys.exit(0)
+			
+		elif list[1]==list[4] and list[4]==list[7]:
+			c = 'Computer Wins!'
+			print('Computer Wins!')
+			y.tictactoe()
+			sys.exit(0)
+			
+		elif list[2]==list[5] and list[5]==list[8]:
+			c = 'Computer Wins!'
+			print('Computer Wins!')
+			y.tictactoe()
+			sys.exit(0)
+			
+		elif list[0]==list[4] and list[4]==list[8]:
+			c = 'Computer Wins!'
+			print('Computer Wins!')
+			y.tictactoe()
+			sys.exit(0)
+			
+		elif list[2]==list[4] and list[4]==list[6]:
+			c = 'Computer Wins!'
+			print('Computer Wins!')
+			y.tictactoe()
+			sys.exit(0)
+			
+		else:
+			pass
+			
+y = Code()
 
-start = random.choice([user1, user2])
-if start == user2:
-	user1, user2 = user2,user1
-print('\n' + user1 + ' wins toss.')
-tictactoe()
-dict = {'X':user1, 'O':user2}
+list = ['0,0', '0,1', '0,2', '1,0','1,1','1,2','2,0','2,1','2,2']
 
-def winX():
-	if a==b and b==c:
-		print(dict['X'] + ' wins!')
-		sys.exit(0)
-	elif d==e and e==f:
-		print(dict['X'] + ' wins!')
-		sys.exit(0)
-	elif g==h and h==i:
-		print(dict['X'] + ' wins!')
-		sys.exit(0)
-	elif a==d and d==g:
-		print(dict['X'] + ' wins!')
-		sys.exit(0)
-	elif b==e and e==h:
-		print(dict['X'] + ' wins!')
-		sys.exit(0)
-	elif c==f and f==i:
-		print(dict['X'] + ' wins!')
-		sys.exit(0)
-	elif a==e and e==i:
-		print(dict['X'] + ' wins!')
-		sys.exit(0)
-	elif c==e and e==g:
-		print(dict['X'] + ' wins!')
-		sys.exit(0)
-	else:
-		pass
+print('Welcome to TicTacToe!')
+player = 'X'
+comp = 'O'
 
-def winO():
-	if a==b and b==c:
-		print(dict['O'] + ' wins!')
-		sys.exit(0)
-	elif d==e and e==f:
-		print(dict['O'] + ' wins!')
-		sys.exit(0)
-	elif g==h and h==i:
-		print(dict['O'] + ' wins!')
-		sys.exit(0)
-	elif a==d and d==g:
-		print(dict['O'] + ' wins!')
-		sys.exit(0)
-	elif b==e and e==h:
-		print(dict['O'] + ' wins!')
-		sys.exit(0)
-	elif c==f and f==i:
-		print(dict['O'] + ' wins!')
-		sys.exit(0)
-	elif a==e and e==i:
-		print(dict['O'] + ' wins!')
-		sys.exit(0)
-	elif c==e and e==g:
-		print(dict['O'] + ' wins!')
-		sys.exit(0)
-	else:
-		pass
-
+w = random.choice([player, comp])
+print('\nYou are ' + player + ' and Computer is ' + comp + '\n')
+gamePlay = True
+c = ' '
+p = ' '
 z = 9
+
+if w == player:
+	print('\nYou start.\n')
+else:
+	print('\nComputer starts.\n')
 while z > 0:
-	user_input = input(user1 + ', What\'s your move: ')
-	z-=1
-	def gameX():
-		global a, b, c, d, e, f, g, h, i, user_input
-		if a == user_input :
-			a = 'X  '
-		elif b == user_input:
-			b = 'X  '
-		elif c == user_input:
-			c = 'X  '
-		elif d == user_input:
-			d = 'X  '
-		elif e == user_input:
-			e = "X  "
-		elif f == user_input:
-			f = 'X  '
-		elif g == user_input:
-			g = 'X  '
-		elif h == user_input:
-			h = 'X  '
-		elif i == user_input:
-			i = 'X  '
+	while gamePlay == True:
+
+		y.tictactoe()
+				
+		if w == player:
+			y.playermove()
+			y.checkp()
+			if gamePlay == False:
+				sys.exit(0)
+			w = comp
 		else:
-			print('Please enter a valid move')
-			user_input = input(user1 + ', What\'s your move: ')
-			gameX()
-		winX()
-	gameX()
-	tictactoe()
-	
-
-	user_input = input(user2 + ', enter your move: ')
-
-	def gameO():
-		global a, b, c, d, e, f, g, h, i, user_input
-		if a == user_input :
-			a = 'O  '
-		elif b == user_input:
-			b = 'O  '
-		elif c == user_input:
-			c = 'O  '
-		elif d == user_input:
-			d = 'O  '
-		elif e == user_input:
-			e = "O  "
-		elif f == user_input:
-			f = 'O  '
-		elif g == user_input:
-			g = 'O  '
-		elif h == user_input:
-			h = 'O  '
-		elif i == user_input:
-			i = 'O  '
-		else:
-			print('Please enter a valid move')
-			user_input = input(user2 + ', what\'s your move: ')
-			gameO()
-		winO()
-	gameO()
-	tictactoe()
-
-input('Press Enter to continue ')
-sys.exit(0)
-
+			y.compmove()
+			print('Computer plays: ' + move)
+			y.checkc()
+			w = player
+		z -=1
