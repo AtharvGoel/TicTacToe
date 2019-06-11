@@ -9,7 +9,6 @@ class Code:
 		print('   ======================')
 		print('   ' + list[6] + ' || ' + list[7] + " || " + list[8] + '\n')
 
-		
 	def playermove(self):
 		pinput = input('Enter your move: ')
 		
@@ -117,16 +116,6 @@ class Code:
 			# Any random move
 			else:
 				pinput = list[random.choice([1,3,5,7])]
-#				if list[1] == '0,1':
-#					pinput = '0,1'
-#				elif list[3] == '1,0':
-#					pinput = '1,0'
-#				elif list[5] == '1,2':
-#					pinput = '1,2'
-#				elif list[7] == '2,1':
-#					pinput = '2,1'
-#				else:
-#					y.compmove()
 			
 		if pinput == 'X ':
 			pinput = ' '
