@@ -44,12 +44,58 @@ class Code:
 		for i in list:
 			x = list.index(i)
 			
-			# Check for winning move
-			if c == 'Computer Wins!':
-				pinput = list[x]
-			# block opponent's winning move
-			elif p == 'You Win!':
-				pinput = list[x]
+			# play blocking or winning move
+			if list[0] == list[1]:
+				pinput = list[2]
+			elif list[1] == list[2]:
+				pinput = list[0]
+			elif list[0] == list[2]:
+				pinput = list[1]
+				
+			elif list[3] == list[4]:
+				pinput = list[5]
+			elif list[4] == list[5]:
+				pinput = list[3]
+			elif list[3] == list[5]:
+				pinput = list[4]
+				
+			elif list[6] == list[7]:
+				pinput = list[8]
+			elif list[7] == list[8]:
+				pinput = list[6]
+			elif list[6] == list[8]:
+				pinput = list[7]
+				
+			elif list[0] == list[3]:
+				pinput = list[6]
+			elif list[3] == list[6]:
+				pinput = list[0]
+			elif list[0] == list[6]:
+				pinput = list[3]
+				
+			elif list[1] == list[4]:
+				pinput = list[7]
+			elif list[4] == list[7]:
+				pinput = list[1]
+			elif list[1] == list[7]:
+				pinput = list[4]
+				
+			elif list[2] == list[5]:
+				pinput = list[8]
+			elif list[5] == list[8]:
+				pinput = list[2]
+			elif list[2] == list[8]:
+				pinput = list[5]\
+				
+			elif list[0] == list[4]:
+				pinput = list[8]
+			elif list[4] == list[8]:
+				pinput = list[0]
+			elif list[0] == list[8]:
+				pinput = list[4]
+				
+			elif
+			
 			# play centre
 			elif list[4] == '1,1':
 				pinput = list[4]
