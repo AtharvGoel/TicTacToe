@@ -291,7 +291,6 @@ else:
 	print('\nComputer starts.\n')
 while z > 0:
 	while gamePlay == True:
-
 		y.tictactoe()
 				
 		if w == player:
